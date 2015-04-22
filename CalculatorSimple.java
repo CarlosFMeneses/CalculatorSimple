@@ -6,10 +6,10 @@ Advanced Java Programming
 */
 /**
 CalculatorSimple.java: Creates a basic calculator using the Java GUI component 
-GridLayout. App performs basic four function (add, subtract, muultiply, and 
-divide) on two integers and display the result. GUI bases on the keyboard layout 
-of the Busicom LE-120A "HANDY-LE", except "=" has been ommited, since this app 
-only excepts 2 integers.
+GridLayout and FlowLayout. App performs basic four function (add, subtract, 
+muultiply, and divide) on two integers and display the result. GUI bases on the 
+keyboard layout of the Busicom LE-120A "HANDY-LE", except "=" has been ommited, 
+since app only excepts 2 integers.
 */
 
 import javax.swing.*;
@@ -34,15 +34,17 @@ public class CalculatorSimple extends JFrame
 	private JButton bDivide = new JButton("÷");
 	private JButton bDecimal = new JButton(".");
 
-	private GridLayout layout = new GridLayout(4,4,3,3);
+	private FlowLayout displayLayout = new FlowLayout(FlowLayout.CENTER);
+	private JTextField display = new JTextField(30);
 	private Container con = getContentPane();
 
 	public CalculatorSimple()
 	{
 		super("Simple Calculator");
-
-		con.setLayout(layout);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		con.setLayout(displayLayout);
+		con.add(display);
 
 		con.add(bSeven);
 		con.add(bEight);
@@ -65,8 +67,8 @@ public class CalculatorSimple extends JFrame
 		con.add(bAdd);
 		con.add(bAdd);
 
-		setSize(250,150);
-		setResizable(false);
+		setSize(375,200);
+		// setResizable(false);
 	}
 
 	public static void main(String[] args) 
