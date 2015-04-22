@@ -17,30 +17,36 @@ import java.awt.*;
 
 public class CalculatorSimple extends JFrame
 {
-	// define buttons
-	private JButton bZero = new JButton("0");
-	private JButton bOne = new JButton("1");
-	private JButton bTwo = new JButton("2");
-	private JButton bThree = new JButton("3");
-	private JButton bFour = new JButton("4");
-	private JButton bFive = new JButton("5");
-	private JButton bSix = new JButton("6");
-	private JButton bSeven = new JButton("7");
-	private JButton bEight = new JButton("8");
-	private JButton bNine = new JButton("9");
-	private JButton bAdd = new JButton("+");
-	private JButton bSubtract = new JButton("-");
-	private JButton bMultiply = new JButton("X");
-	private JButton bDivide = new JButton("÷");
-	private JButton bDecimal = new JButton(".");
-
-	private FlowLayout displayLayout = new FlowLayout(FlowLayout.CENTER);
-	private JTextField display = new JTextField(30);
-	private Container con = getContentPane();
+	private JTextField display;
 
 	public CalculatorSimple()
 	{
 		super("Simple Calculator");
+
+		// define display
+		display = new JTextField("0", 30);
+		display.setHorizontalAlignment(JTextField.RIGHT);
+
+		// define buttons
+		JButton bZero = new JButton("0");
+		JButton bOne = new JButton("1");
+		JButton bTwo = new JButton("2");
+		JButton bThree = new JButton("3");
+		JButton bFour = new JButton("4");
+		JButton bFive = new JButton("5");
+		JButton bSix = new JButton("6");
+		JButton bSeven = new JButton("7");
+		JButton bEight = new JButton("8");
+		JButton bNine = new JButton("9");
+		JButton bAdd = new JButton("+");
+		JButton bSubtract = new JButton("-");
+		JButton bMultiply = new JButton("X");
+		JButton bDivide = new JButton("÷");
+		JButton bDecimal = new JButton(".");
+
+		FlowLayout displayLayout = new FlowLayout(FlowLayout.CENTER);
+		Container con = getContentPane();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		con.setLayout(displayLayout);
